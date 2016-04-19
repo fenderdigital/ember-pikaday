@@ -93,6 +93,7 @@ export default Ember.Component.extend({
 
   userSelectedDate: function() {
     var selectedDate = this.get('pikaday').getDate();
+    var selectedDate = selectedDate.setDate(selectedDate.getDate() + 1);
 
     if (this.get('useUTC')) {
       selectedDate = moment.utc([selectedDate.getFullYear(), selectedDate.getMonth(), selectedDate.getDate()]).toDate();
